@@ -1,0 +1,38 @@
+{
+  "os":  "Linux-6.1.85+-x86_64-with-glibc2.35",
+  "python":  "3.10.12",
+  "startedAt":  "2024-10-19T16:41:17.475386Z",
+  "program":  "Copy%20of%20Train%20OD_yolo.ipynb",
+  "email":  "udohdavemike@gmail.com",
+  "root":  "/content/drive/MyDrive/RsStudioProject/trainTest",
+  "host":  "45147b8c12c3",
+  "username":  "root",
+  "executable":  "/usr/bin/python3",
+  "colab":  "https://colab.research.google.com/notebook#fileId=1oFp8w_-9TI0bbOmQ1w8VYWHV7jaA0pQG",
+  "cpu_count":  1,
+  "cpu_count_logical":  2,
+  "gpu":  "[Tesla T4]",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "120942624768",
+      "used":  "34759454720"
+    }
+  },
+  "memory":  {
+    "total":  "13609431040"
+  },
+  "cpu":  {
+    "count":  1,
+    "countLogical":  2
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla T4",
+      "memoryTotal":  "16106127360",
+      "cudaCores":  2560,
+      "architecture":  "Turing"
+    }
+  ],
+  "cudaVersion":  "12.2"
+}

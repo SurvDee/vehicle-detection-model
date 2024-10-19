@@ -1,0 +1,82 @@
+2024-10-19 16:41:17,463 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Current SDK version is 0.18.3
+2024-10-19 16:41:17,464 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Configure stats pid to 1061
+2024-10-19 16:41:17,465 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Loading settings from /root/.config/wandb/settings
+2024-10-19 16:41:17,466 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Loading settings from /content/drive/MyDrive/RsStudioProject/trainTest/wandb/settings
+2024-10-19 16:41:17,466 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-10-19 16:41:17,466 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-10-19 16:41:17,466 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2024-10-19 16:41:17,466 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-10-19 16:41:17,467 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-10-19 16:41:17,467 INFO    MainThread:1061 [wandb_setup.py:_flush():79] Applying login settings: {'api_key': '***REDACTED***'}
+2024-10-19 16:41:17,467 ERROR   MainThread:1061 [wandb_setup.py:_flush():81] error in wandb.init()
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3553, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-10-3a3c7c0acc99>", line 6, in <cell line: 6>
+    results = model.train(data="/content/drive/MyDrive/RsStudioProject/trainTest/complete.yaml", epochs=2, imgsz=640,cache=False)  # train the model
+  File "/usr/local/lib/python3.10/dist-packages/ultralytics/engine/model.py", line 802, in train
+    self.trainer.train()
+  File "/usr/local/lib/python3.10/dist-packages/ultralytics/engine/trainer.py", line 207, in train
+    self._do_train(world_size)
+  File "/usr/local/lib/python3.10/dist-packages/ultralytics/engine/trainer.py", line 327, in _do_train
+    self._setup_train(world_size)
+  File "/usr/local/lib/python3.10/dist-packages/ultralytics/engine/trainer.py", line 233, in _setup_train
+    self.run_callbacks("on_pretrain_routine_start")
+  File "/usr/local/lib/python3.10/dist-packages/ultralytics/engine/trainer.py", line 168, in run_callbacks
+    callback(self)
+  File "/usr/local/lib/python3.10/dist-packages/ultralytics/utils/callbacks/wb.py", line 112, in on_pretrain_routine_start
+    wb.run or wb.init(project=trainer.args.project or "Ultralytics", name=trainer.args.name, config=vars(trainer.args))
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/wandb_init.py", line 1266, in init
+    wandb._sentry.reraise(e)
+  File "/usr/local/lib/python3.10/dist-packages/wandb/analytics/sentry.py", line 155, in reraise
+    raise exc.with_traceback(sys.exc_info()[2])
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/wandb_init.py", line 1251, in init
+    wi.setup(kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/wandb_init.py", line 303, in setup
+    wandb_login._login(
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/wandb_login.py", line 347, in _login
+    wlogin.prompt_api_key()
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/wandb_login.py", line 274, in prompt_api_key
+    key, status = self._prompt_api_key()
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/wandb_login.py", line 253, in _prompt_api_key
+    key = apikey.prompt_api_key(
+  File "/usr/local/lib/python3.10/dist-packages/wandb/sdk/lib/apikey.py", line 164, in prompt_api_key
+    key = input_callback(api_ask).strip()
+  File "/usr/local/lib/python3.10/dist-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "/usr/local/lib/python3.10/dist-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+2024-10-19 16:41:17,468 INFO    MainThread:1061 [wandb_init.py:_log_setup():532] Logging user logs to /content/drive/MyDrive/RsStudioProject/trainTest/wandb/run-20241019_164117-8ajm31av/logs/debug.log
+2024-10-19 16:41:17,468 INFO    MainThread:1061 [wandb_init.py:_log_setup():533] Logging internal logs to /content/drive/MyDrive/RsStudioProject/trainTest/wandb/run-20241019_164117-8ajm31av/logs/debug-internal.log
+2024-10-19 16:41:17,468 INFO    MainThread:1061 [wandb_init.py:_jupyter_setup():478] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7c3df2924a60>
+2024-10-19 16:41:17,469 INFO    MainThread:1061 [wandb_init.py:init():617] calling init triggers
+2024-10-19 16:41:17,469 INFO    MainThread:1061 [wandb_init.py:init():624] wandb.init called with sweep_config: {}
+config: {'task': 'detect', 'mode': 'train', 'model': 'yolov8m.pt', 'data': '/content/drive/MyDrive/RsStudioProject/trainTest/complete.yaml', 'epochs': 2, 'time': None, 'patience': 100, 'batch': 16, 'imgsz': 640, 'save': True, 'save_period': -1, 'cache': False, 'device': None, 'workers': 8, 'project': None, 'name': 'train5', 'exist_ok': False, 'pretrained': True, 'optimizer': 'auto', 'verbose': True, 'seed': 0, 'deterministic': True, 'single_cls': False, 'rect': False, 'cos_lr': False, 'close_mosaic': 10, 'resume': False, 'amp': True, 'fraction': 1.0, 'profile': False, 'freeze': None, 'multi_scale': False, 'overlap_mask': True, 'mask_ratio': 4, 'dropout': 0.0, 'val': True, 'split': 'val', 'save_json': False, 'save_hybrid': False, 'conf': None, 'iou': 0.7, 'max_det': 300, 'half': False, 'dnn': False, 'plots': True, 'source': None, 'vid_stride': 1, 'stream_buffer': False, 'visualize': False, 'augment': False, 'agnostic_nms': False, 'classes': None, 'retina_masks': False, 'embed': None, 'show': False, 'save_frames': False, 'save_txt': False, 'save_conf': False, 'save_crop': False, 'show_labels': True, 'show_conf': True, 'show_boxes': True, 'line_width': None, 'format': 'torchscript', 'keras': False, 'optimize': False, 'int8': False, 'dynamic': False, 'simplify': True, 'opset': None, 'workspace': 4, 'nms': False, 'lr0': 0.01, 'lrf': 0.01, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.1, 'box': 7.5, 'cls': 0.5, 'dfl': 1.5, 'pose': 12.0, 'kobj': 1.0, 'label_smoothing': 0.0, 'nbs': 64, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'bgr': 0.0, 'mosaic': 1.0, 'mixup': 0.0, 'copy_paste': 0.0, 'copy_paste_mode': 'flip', 'auto_augment': 'randaugment', 'erasing': 0.4, 'crop_fraction': 1.0, 'cfg': None, 'tracker': 'botsort.yaml', 'save_dir': 'runs/detect/train5'}
+2024-10-19 16:41:17,469 INFO    MainThread:1061 [wandb_init.py:init():667] starting backend
+2024-10-19 16:41:17,469 INFO    MainThread:1061 [wandb_init.py:init():671] sending inform_init request
+2024-10-19 16:41:17,474 INFO    MainThread:1061 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-10-19 16:41:17,474 INFO    MainThread:1061 [wandb_init.py:init():684] backend started and connected
+2024-10-19 16:41:17,516 INFO    MainThread:1061 [wandb_run.py:_label_probe_notebook():1346] probe notebook
+2024-10-19 16:41:20,491 INFO    MainThread:1061 [wandb_init.py:init():779] updated telemetry
+2024-10-19 16:41:20,497 INFO    MainThread:1061 [wandb_init.py:init():812] communicating run to backend with 90.0 second timeout
+2024-10-19 16:41:20,751 INFO    MainThread:1061 [wandb_init.py:init():863] starting run threads in backend
+2024-10-19 16:41:21,481 INFO    MainThread:1061 [wandb_run.py:_console_start():2465] atexit reg
+2024-10-19 16:41:21,481 INFO    MainThread:1061 [wandb_run.py:_redirect():2313] redirect: wrap_raw
+2024-10-19 16:41:21,481 INFO    MainThread:1061 [wandb_run.py:_redirect():2378] Wrapping output streams.
+2024-10-19 16:41:21,482 INFO    MainThread:1061 [wandb_run.py:_redirect():2403] Redirects installed.
+2024-10-19 16:41:21,498 INFO    MainThread:1061 [wandb_init.py:init():907] run started, returning control to user process
+2024-10-19 16:45:08,916 INFO    MainThread:1061 [wandb_run.py:_config_callback():1394] config_cb ('_wandb', 'visualize', 'curves/Precision-Recall(B)') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/area-under-curve/v0', 'fieldSettings': {'x': 'x', 'y': 'y', 'class': 'class'}, 'stringSettings': {'title': 'Precision-Recall(B)', 'x-axis-title': 'Recall', 'y-axis-title': 'Precision'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'curves/Precision-Recall(B)_table'}], 'fields': []}]}]}}} None
+2024-10-19 16:45:09,178 INFO    MainThread:1061 [wandb_run.py:_config_callback():1394] config_cb ('_wandb', 'visualize', 'curves/F1-Confidence(B)') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/area-under-curve/v0', 'fieldSettings': {'x': 'x', 'y': 'y', 'class': 'class'}, 'stringSettings': {'title': 'F1-Confidence(B)', 'x-axis-title': 'Confidence', 'y-axis-title': 'F1'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'curves/F1-Confidence(B)_table'}], 'fields': []}]}]}}} None
+2024-10-19 16:45:09,337 INFO    MainThread:1061 [wandb_run.py:_config_callback():1394] config_cb ('_wandb', 'visualize', 'curves/Precision-Confidence(B)') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/area-under-curve/v0', 'fieldSettings': {'x': 'x', 'y': 'y', 'class': 'class'}, 'stringSettings': {'title': 'Precision-Confidence(B)', 'x-axis-title': 'Confidence', 'y-axis-title': 'Precision'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'curves/Precision-Confidence(B)_table'}], 'fields': []}]}]}}} None
+2024-10-19 16:45:09,471 INFO    MainThread:1061 [wandb_run.py:_config_callback():1394] config_cb ('_wandb', 'visualize', 'curves/Recall-Confidence(B)') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/area-under-curve/v0', 'fieldSettings': {'x': 'x', 'y': 'y', 'class': 'class'}, 'stringSettings': {'title': 'Recall-Confidence(B)', 'x-axis-title': 'Confidence', 'y-axis-title': 'Recall'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'curves/Recall-Confidence(B)_table'}], 'fields': []}]}]}}} None
+2024-10-19 16:45:09,593 INFO    MainThread:1061 [wandb_run.py:_finish():2164] finishing run udohdavemike-hochschule-f-r-technik-stuttgart/Ultralytics/8ajm31av
+2024-10-19 16:45:09,594 INFO    MainThread:1061 [jupyter.py:save_history():459] not saving jupyter history
+2024-10-19 16:45:09,594 INFO    MainThread:1061 [jupyter.py:save_ipynb():387] not saving jupyter notebook
+2024-10-19 16:45:09,594 INFO    MainThread:1061 [wandb_init.py:_jupyter_teardown():460] cleaning up jupyter logic
+2024-10-19 16:45:09,595 INFO    MainThread:1061 [wandb_run.py:_atexit_cleanup():2428] got exitcode: 0
+2024-10-19 16:45:09,595 INFO    MainThread:1061 [wandb_run.py:_restore():2410] restore
+2024-10-19 16:45:09,596 INFO    MainThread:1061 [wandb_run.py:_restore():2416] restore done
+2024-10-19 16:45:12,337 INFO    MainThread:1061 [wandb_run.py:_footer_history_summary_info():4049] rendering history
+2024-10-19 16:45:12,338 INFO    MainThread:1061 [wandb_run.py:_footer_history_summary_info():4081] rendering summary
+2024-10-19 16:45:12,352 INFO    MainThread:1061 [wandb_run.py:_footer_sync_info():4008] logging synced files
